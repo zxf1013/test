@@ -1,0 +1,92 @@
+ <!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="css/base.css"/>
+    <link rel="stylesheet" href="css/category.css"/>
+</head>
+<body>
+<header id="header" class="header">
+    <div class="logo">
+        <a href="index.html" title="慢慢买">
+            <img src="images/header_logo.png" alt=""/>
+        </a>
+    </div>
+    <div class="appdown">
+        <a href="javascript:;" title="手机app下载">
+            <img src="images/header_app.png" alt="手机app下载"/>
+        </a>
+    </div>
+</header>
+<section id="form-search">
+    <form action="#" class="search">
+        <input type="search" placeholder="请输入你要搜索的商品"/>
+        <input type="button" value="搜索"/>
+    </form>
+</section>
+<section id="category">
+    <div class="row clearfix">
+        <!--<ul class="category-title">-->
+            <!--<li>-->
+                <!--<a href="#" style="background-image:url('http://www.zuyushop.com/wap/images/arrow1.gif');">-->
+                    <!--<ul class="catagore-content clearfix">-->
+                        <!--<li><a href="#"></a></li>-->
+                    <!--</ul>-->
+                <!--</a>-->
+            <!--</li>-->
+        <!--</ul>-->
+    </div>
+</section>
+<script id="category-product" type="text/template">
+    <ul class="category-title">
+       {{each result as v i}}
+        <li>
+            <a href="javascript:void(0)" data-title-id="{{v.titleId}}" style="background-image:url('http://www.zuyushop.com/wap/images/arrow1.gif');">{{v.title}}
+            </a>
+                <ul class="category-content clearfix">
+                    {{each result as v i}}
+                    <li>
+                        <a href="productlist.html?categoryid={{v.categoryId}}&amp;category={{v.category}}&amp;pageid= 1" data-category-id="{{v.categoryId}}">{{v.category}}</a>
+                    </li>
+                    {{/each}}
+                </ul>
+
+        </li>
+        {{/each}}
+    </ul>
+</script>
+<!--<script id="content-product" type="text/template">-->
+    <!--<ul class="category-content clearfix">-->
+        <!--{{each result as v i}}-->
+        <!--<li>-->
+            <!--<a href="productlist.html?categoryid={{v.categoryId}}&amp;category={{v.category}}&amp;pageid= 1" data-category-id="0">{{v.category}}</a>-->
+        <!--</li>-->
+        <!--{{/each}}-->
+    <!--</ul>-->
+<!--</script>-->
+
+<footer id="ctl00_foot">
+    <div class="foot_top">
+        <a href="javascript:;">登录</a>
+        <a href="javascript:;">注册</a>
+        <a href="#" style="width: 40%; border: 0;">
+            <img src="http://www.zuyushop.com/wap/images/top.jpg" width="15" height="15">返回顶部
+        </a>
+    </div>
+    <div class="footer">
+        <p>
+            <a href="javascript:;" style="color: Red;">手机APP下载</a>
+            <a href="index.html">慢慢买手机版</a> -- 掌上比价平台
+        </p>
+        <p>m.manmanbuy.com</p>
+    </div>
+</footer>
+
+<script src="js/jquery.min.js"></script>
+<script src="js/template.js"></script>
+<script src="js/common/Tool.js"></script>
+<script src="js/common/Route.js"></script>
+<script src="js/category.js"></script>
+</body>
+</html>
